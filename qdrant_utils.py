@@ -28,7 +28,7 @@ def recreate_collection(collection_name: str):
     client.recreate_collection(
         collection_name=collection_name,
         vectors_config=VectorParams(
-            size=1536,               # embedding dimension
+            size=1536,               
             distance=Distance.COSINE
         )
     )

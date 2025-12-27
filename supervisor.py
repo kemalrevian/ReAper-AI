@@ -4,15 +4,24 @@ from langchain_openai import ChatOpenAI
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
 import json
+import os
+import openai
+from dotenv import load_dotenv
 
-llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
+# =====
+# MODEL
+# =====
+load_dotenv()
 
-from langchain_openai import ChatOpenAI
-from langchain_core.prompts import ChatPromptTemplate
-import json
+openai.api_key = os.getenv("OPENAI_API_KEY")
+CHAT_MODEL = "gpt-4o-mini"
 
-llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
+llm = ChatOpenAI(model=CHAT_MODEL, temperature=0)
 
+
+# =============
+# SYSTEM PROMPT
+# =============
 SUPERVISOR_PROMPT = """
 Anda adalah Supervisor Agent.
 

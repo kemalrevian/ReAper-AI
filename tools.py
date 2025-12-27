@@ -5,12 +5,12 @@ from rag import (
     get_comparison_summary_chain,
 )
 
-# ============================
+# ==================
 # SINGLE PAPER TOOLS
-# ============================
+# ==================
 def build_single_paper_tool(vectorstore, chat_history: str = ""):
     """
-    Tools untuk interaksi dengan SATU dokumen penelitian.
+    Tools untuk interaksi dengan SATU dokumen/paper penelitian.
     """
     @tool
     def QA_single_paper(question: str) -> str:
@@ -47,16 +47,16 @@ def build_single_paper_tool(vectorstore, chat_history: str = ""):
     return [QA_single_paper, summarize_single_paper]
 
 
-# ============================
+# ================
 # COMPARISON TOOLS
-# ============================
+# ================
 def build_comparison_tool(vectorstore_a, vectorstore_b):
 
     @tool
     def QA_two_papers(question: str) -> str:
         """
         Gunakan tool ini untuk pertanyaan PERBANDINGAN spesifik
-        antara dua dokumen.
+        antara dua dokumen/paper.
 
         Contoh:
         - perbedaan metode
@@ -73,7 +73,7 @@ def build_comparison_tool(vectorstore_a, vectorstore_b):
     def summarize_two_papers() -> str:
         """
         Gunakan tool ini untuk MERINGKAS dan MEMBANDINGKAN
-        dua dokumen secara menyeluruh.
+        dua dokumen/paper secara menyeluruh.
         """
         chain = get_comparison_summary_chain(
             vectorstore_a=vectorstore_a,
