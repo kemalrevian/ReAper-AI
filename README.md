@@ -22,15 +22,6 @@ This application was developed to showcase the implementation of **Large Languag
   - PDF → chunking → embedding → Qdrant Vector Database
   - LLM responses are grounded on retrieved document context
 
-- 💬 **Chat History Awareness**
-  - Maintains conversational context across multiple turns
-
-- 📊 **Token Usage Monitoring**
-  - Displays input, output, and total token usage per response
-
-- 📄 **RAG Evidence Display**
-  - Shows document sources used to generate each answer
-
 ---
 
 ## 🛠️ Tech Stack
