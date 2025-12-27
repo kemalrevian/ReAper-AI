@@ -1,9 +1,24 @@
 from langchain_openai import ChatOpenAI
 from langgraph.prebuilt import create_react_agent
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
+import openai
+from dotenv import load_dotenv
+import os
 
-llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
+# =====
+# MODEL
+# =====
+load_dotenv()
 
+openai.api_key = os.getenv("OPENAI_API_KEY")
+CHAT_MODEL = "gpt-4o-mini"
+
+llm = ChatOpenAI(model=CHAT_MODEL, temperature=0)
+
+
+# =============
+# SYSTEM PROMPT
+# =============
 CHITCHAT_PROMPT = """
 Anda adalah AI Research Assistant.
 
@@ -30,6 +45,6 @@ def build_chitchat_agent():
     """
     return create_react_agent(
         model=llm,
-        tools=[],   # tidak ada tool
+        tools=[],
         prompt=prompt
     )

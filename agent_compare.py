@@ -6,9 +6,9 @@ from dotenv import load_dotenv
 import os
 from tools import build_comparison_tool
 
-# ===============================
+# =====
 # MODEL
-# ===============================
+# =====
 load_dotenv()
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
@@ -16,9 +16,9 @@ CHAT_MODEL = "gpt-4o-mini"
 
 llm = ChatOpenAI(model=CHAT_MODEL,temperature=0)
 
-# ===============================
+# =============
 # SYSTEM PROMPT
-# ===============================
+# =============
 SYSTEM_PROMPT = """
 Anda adalah Comparison Research Agent.
 
