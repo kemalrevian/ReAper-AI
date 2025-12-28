@@ -264,7 +264,7 @@ if user_query:
                     # Ambil source unik
                     sources = {doc.metadata.get("source", "PDF") for doc in rag_docs}
 
-                    with st.expander("📄 Retrieved Documents (RAG Evidence)"):
+                    with st.expander("📄 Retrieved Documents"):
                         for src in sources:
                             st.markdown(f"- Source: {src}")
 
@@ -273,7 +273,7 @@ if user_query:
                 docs_b = get_vectorstore(col_b).similarity_search(user_query, k=5)
 
                 if docs_a or docs_b:
-                    with st.expander("📄 Retrieved Documents (RAG Evidence)"):
+                    with st.expander("📄 Retrieved Documents"):
 
                         if docs_a:
                             sources_a = {d.metadata.get("source", "PDF") for d in docs_a}

@@ -38,7 +38,7 @@ WAJIB mengeluarkan output dalam format JSON PERSIS seperti ini:
 {{
   "route": "single | compare | chitchat",
   "intent": "qa | summary | none",
-  "doc": "doc_1 | doc_2 | none"s
+  "doc": "doc_1 | doc_2 | none"
 }}
 
 ATURAN ROUTING:
