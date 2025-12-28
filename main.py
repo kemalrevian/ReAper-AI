@@ -48,7 +48,6 @@ if "indexed_files" not in st.session_state:
 if "vectorstore_ready" not in st.session_state:
     st.session_state.vectorstore_ready = False
 
-# 🔑 STEP 2 STATE
 if "doc_labels" not in st.session_state:
     st.session_state.doc_labels = {}
 
@@ -114,7 +113,7 @@ if uploaded_files:
                 "collection": collection_name,
             }
 
-            # 🔑 STEP 2 — DOC LABELING (INCREMENTAL)
+            
             if len(st.session_state.doc_labels) == 0:
                 st.session_state.doc_labels["doc_1"] = collection_name
             elif len(st.session_state.doc_labels) == 1:
